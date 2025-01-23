@@ -363,4 +363,4 @@ require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
 /**
  * Getting Started
 */
-require get_template_directory() . '/inc/getting-started/getting-started.php';
+require get_template_directory() . '/inc/dashboard/dashboard.php';

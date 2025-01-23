@@ -1,10 +1,10 @@
  === Restaurant and Cafe ===
 
 Contributors: raratheme
-Requires at least: 4.7
-Requires PHP: 5.6
-Tested up to: 6.0
-Stable tag: 1.2.3
+Requires at least: 6.2
+Requires PHP: 7.4
+Tested up to: 6.7
+Stable tag: 1.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  One-column, two-columns, right-sidebar, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, custom-background, footer-widgets, full-width-template, theme-options, e-commerce, food-and-drink, blog
@@ -159,8 +159,11 @@ Restaurant and Cafe WordPress Theme is distributed under the terms of the GPLv2 
    
 == Changelog ==
 
+  1.2.4 - January 15, 2025
+	* Update: Added new dashboard for better user experience.
+
    1.2.3 -  Feb 8, 2024
-   * Update: Admin ajax issue fixes.
+    * Update: Admin ajax issue fixes.
 
    1.2.2 -  Jan 31, 2024
    * Update: Updated Admin Notice with nonces check.

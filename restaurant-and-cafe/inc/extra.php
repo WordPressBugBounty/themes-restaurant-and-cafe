@@ -688,7 +688,7 @@ function restaurant_and_cafe_admin_notice(){
                 <div class="notice-text">
                     <h3><?php esc_html_e( 'Congratulations!', 'restaurant-and-cafe' ); ?></h3>
                     <p><?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'restaurant-and-cafe' ), esc_html( $name ) ) ; ?></p>
-                    <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=restaurant-and-cafe-getting-started' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the getting started.', 'restaurant-and-cafe' ); ?></a></p>
+                    <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=restaurant-and-cafe-dashboard' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the dashboard.', 'restaurant-and-cafe' ); ?></a></p>
                     <p class="dismiss-link"><strong><a href="?restaurant_and_cafe_admin_notice=1&_wpnonce=<?php echo esc_attr( $dismissnonce ); ?>"><?php esc_html_e( 'Dismiss', 'restaurant-and-cafe' ); ?></a></strong></p>
                 </div>
             </div>
@@ -705,11 +705,11 @@ if( ! function_exists( 'restaurant_and_cafe_update_admin_notice' ) ) :
 function restaurant_and_cafe_update_admin_notice(){
 
     if (!current_user_can('manage_options')) {
-        exit;
+        return;
     }
 
      // Bail if the nonce doesn't check out
-     if ( ( isset( $_GET['restaurant_and_cafe_admin_notice'] ) && $_GET['restaurant_and_cafe_admin_notice'] = '1' ) && wp_verify_nonce( $_GET['_wpnonce'], 'restaurant_and_cafe_admin_notice' ) ) {
+     if ( ( isset( $_GET['restaurant_and_cafe_admin_notice'] ) && $_GET['restaurant_and_cafe_admin_notice'] === '1' ) && wp_verify_nonce( $_GET['_wpnonce'], 'restaurant_and_cafe_admin_notice' ) ) {
         update_option( 'restaurant_and_cafe_admin_notice', true );
     }
 
