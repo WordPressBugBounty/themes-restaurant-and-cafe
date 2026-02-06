@@ -4,7 +4,7 @@ Contributors: raratheme
 Requires at least: 6.2
 Requires PHP: 7.4
 Tested up to: 6.9
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  One-column, two-columns, right-sidebar, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, custom-background, footer-widgets, full-width-template, theme-options, e-commerce, food-and-drink, blog
@@ -158,6 +158,9 @@ Restaurant and Cafe WordPress Theme is distributed under the terms of the GPLv2 
 
    
 == Changelog ==
+
+  1.2.6 - February 06, 2026
+  * Fix: Security issues to Broken Access Control
 
   1.2.5 - January 20, 2026
 	* Fix: Translation loading early issue has been fixed.

@@ -1525,7 +1525,7 @@ function restaurant_and_cafe_customize_controls_scripts() {
     $array = array( 
         'ajax_url'   => admin_url( 'admin-ajax.php' ),
         'flushit'    => __( 'Successfully Flushed!','restaurant-and-cafe' ),
-        'nonce'      => wp_create_nonce('ajax-nonce')
+        'nonce'      => wp_create_nonce('restaurant_and_cafe_flush_fonts_nonce')
     );
     wp_enqueue_script( 'restaurant-and-cafe-admin-js', get_template_directory_uri().'/inc/js/admin.js', array( 'jquery' ), '', true );
     wp_localize_script( 'restaurant-and-cafe-admin-js', 'restaurant_and_cafe_cdata', $array );
