@@ -18,22 +18,30 @@ function restaurant_and_cafe_add_sidebar_layout_box(){
     );
 }
 
+/**
+ * Get Sidebar Layout Data
+ */
+if( ! function_exists( 'restaurant_and_cafe_get_sidebar_layout_data' ) ){
+    function restaurant_and_cafe_get_sidebar_layout_data(){
+        return array(    
+            'right-sidebar' => array(
+                'value'     => 'right-sidebar',
+                'label'     => __( 'Right Sidebar(default)', 'restaurant-and-cafe'),
+                'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
+            ),
+            'no-sidebar' => array(
+                'value'     => 'no-sidebar',
+                'label'     => __('No Sidebar','restaurant-and-cafe'),
+                'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
+            )
+        );
+    }
+}
 
-$restaurant_and_cafe_sidebar_layout = array(
-    'right-sidebar' => array(
-        'value'     => 'right-sidebar',
-        'label'     => __( 'Right Sidebar(default)', 'restaurant-and-cafe'),
-        'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
-    ),
-    'no-sidebar' => array(
-        'value'     => 'no-sidebar',
-        'label'     => __('No Sidebar','restaurant-and-cafe'),
-        'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
-    )
-);
 
 function restaurant_and_cafe_sidebar_layout_callback(){
-    global $post , $restaurant_and_cafe_sidebar_layout;
+    global $post;
+    $restaurant_and_cafe_sidebar_layout = restaurant_and_cafe_get_sidebar_layout_data();
     wp_nonce_field( basename( __FILE__ ), 'restaurant_and_cafe_nonce' ); ?> 
     <table class="form-table">
         <tr>
@@ -65,7 +73,8 @@ function restaurant_and_cafe_sidebar_layout_callback(){
  * @hooked to save_post hook
  */
 function restaurant_and_cafe_save_sidebar_layout( $post_id ){
-    global $restaurant_and_cafe_sidebar_layout;
+    $restaurant_and_cafe_sidebar_layout = restaurant_and_cafe_get_sidebar_layout_data();
+
 
     // Verify the nonce before proceeding.
     if( !isset( $_POST[ 'restaurant_and_cafe_nonce' ] ) || !wp_verify_nonce( $_POST[ 'restaurant_and_cafe_nonce' ], basename( __FILE__ ) ) )
